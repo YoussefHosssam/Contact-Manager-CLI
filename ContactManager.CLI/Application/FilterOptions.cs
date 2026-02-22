@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace ContactManager.Application;
 
-namespace ContactManager.CLI.Application
-{
-    internal class FilterOptions
-    {
-    }
-}
+public sealed record FilterOptions(
+    DateTimeOffset? CreatedAfter = null,
+    DateTimeOffset? CreatedBefore = null,
+    string? EmailDomain = null,
+    string? NameStartsWith = null
+);

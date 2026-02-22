@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ContactManager.Domain;
 
-namespace ContactManager.CLI.Infrastructure
+namespace ContactManager.Infrastructure;
+
+public interface IContactRepository
 {
-    internal interface IContactRepository
-    {
-    }
+    Task<IReadOnlyList<Contact>> LoadAsync(CancellationToken ct);
+    Task SaveAsync(IReadOnlyList<Contact> contacts, CancellationToken ct);
 }
